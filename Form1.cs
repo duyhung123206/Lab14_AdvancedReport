@@ -19,7 +19,7 @@ namespace Lab14_AdvancedReport
 
         private void LoadDanhSachKhoa()
         {
-            // Tạo bảng danh sách Khoa giả lập
+            // Tạo bảng danh sách Khoa giả lập cho ComboBox
             DataTable dtKhoa = new DataTable("KhoaTable");
             dtKhoa.Columns.Add("MaKhoa", typeof(string));
             dtKhoa.Columns.Add("TenKhoa", typeof(string));
@@ -44,36 +44,36 @@ namespace Lab14_AdvancedReport
                 }
 
                 string maKhoa = cboKhoa.SelectedValue.ToString();
+                string tenKhoa = cboKhoa.Text; // Lấy tên khoa hiển thị để đồng bộ với báo cáo
 
-                // Tạo bảng dữ liệu Sinh viên giả lập có đặt tên trùng khớp để Crystal Reports nhận diện
+                // Tạo bảng dữ liệu Sinh viên giả lập khớp với DataSetStudent.xsd
                 DataTable data = new DataTable("StudentTable");
                 data.Columns.Add("MaSV", typeof(string));
                 data.Columns.Add("HoTen", typeof(string));
                 data.Columns.Add("MaKhoa", typeof(string));
+                data.Columns.Add("TenKhoa", typeof(string));
 
                 // Thêm dữ liệu mẫu phù hợp với mã khoa chọn
                 if (maKhoa == "KH01")
                 {
-                    data.Rows.Add("SV01", "Nguyễn Văn Hiếu", "KH01");
-                    data.Rows.Add("SV02", "Trần Văn An", "KH01");
+                    data.Rows.Add("SV01", "Nguyễn Văn Hiếu", "KH01", tenKhoa);
+                    data.Rows.Add("SV02", "Trần Văn An", "KH01", tenKhoa);
                 }
                 else if (maKhoa == "KH02")
                 {
-                    data.Rows.Add("SV03", "Lê Thị Hồng", "KH02");
+                    data.Rows.Add("SV03", "Lê Thị Hồng", "KH02", tenKhoa);
                 }
                 else
                 {
-                    data.Rows.Add("SV04", "Phạm Hoàng Long", "KH03");
+                    data.Rows.Add("SV04", "Phạm Hoàng Long", "KH03", tenKhoa);
                 }
 
                 // Khởi tạo báo cáo rptStudent
                 rptStudent report = new rptStudent();
-
-                // Gán nguồn dữ liệu
                 report.SetDataSource(data);
 
-                // Truyền tham số vào báo cáo
-                report.SetParameterValue("pTenKhoa", cboKhoa.Text);
+                // Truyền giá trị vào các tham số trên báo cáo
+                report.SetParameterValue("pTenKhoa", tenKhoa);
                 report.SetParameterValue("pNgayLap", DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss"));
 
                 // Hiển thị lên Viewer
