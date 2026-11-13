@@ -287,6 +287,8 @@ namespace Lab14_AdvancedReport {
             
             private global::System.Data.DataColumn columnTenKhoa;
             
+            private global::System.Data.DataColumn columnDiemTB;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public StudentTableDataTable() {
@@ -354,6 +356,14 @@ namespace Lab14_AdvancedReport {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn DiemTBColumn {
+                get {
+                    return this.columnDiemTB;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -389,13 +399,14 @@ namespace Lab14_AdvancedReport {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public StudentTableRow AddStudentTableRow(string MaSV, string HoTen, string MaKhoa, string TenKhoa) {
+            public StudentTableRow AddStudentTableRow(string MaSV, string HoTen, string MaKhoa, string TenKhoa, double DiemTB) {
                 StudentTableRow rowStudentTableRow = ((StudentTableRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         MaSV,
                         HoTen,
                         MaKhoa,
-                        TenKhoa};
+                        TenKhoa,
+                        DiemTB};
                 rowStudentTableRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowStudentTableRow);
                 return rowStudentTableRow;
@@ -422,6 +433,7 @@ namespace Lab14_AdvancedReport {
                 this.columnHoTen = base.Columns["HoTen"];
                 this.columnMaKhoa = base.Columns["MaKhoa"];
                 this.columnTenKhoa = base.Columns["TenKhoa"];
+                this.columnDiemTB = base.Columns["DiemTB"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -435,6 +447,8 @@ namespace Lab14_AdvancedReport {
                 base.Columns.Add(this.columnMaKhoa);
                 this.columnTenKhoa = new global::System.Data.DataColumn("TenKhoa", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnTenKhoa);
+                this.columnDiemTB = new global::System.Data.DataColumn("DiemTB", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDiemTB);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -641,6 +655,22 @@ namespace Lab14_AdvancedReport {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public double DiemTB {
+                get {
+                    try {
+                        return ((double)(this[this.tableStudentTable.DiemTBColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'DiemTB\' in table \'StudentTable\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableStudentTable.DiemTBColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public bool IsMaSVNull() {
                 return this.IsNull(this.tableStudentTable.MaSVColumn);
             }
@@ -685,6 +715,18 @@ namespace Lab14_AdvancedReport {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void SetTenKhoaNull() {
                 this[this.tableStudentTable.TenKhoaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsDiemTBNull() {
+                return this.IsNull(this.tableStudentTable.DiemTBColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetDiemTBNull() {
+                this[this.tableStudentTable.DiemTBColumn] = global::System.Convert.DBNull;
             }
         }
         

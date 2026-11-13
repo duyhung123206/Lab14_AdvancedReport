@@ -26,3 +26,4 @@ C:\nguyenduyhung\Lab14_AdvancedReport\Lab14_AdvancedReport\obj\Debug\Lab14_Advan
 C:\nguyenduyhung\Lab14_AdvancedReport\Lab14_AdvancedReport\obj\Debug\Lab14_Ad.A735D24B.Up2Date
 C:\nguyenduyhung\Lab14_AdvancedReport\Lab14_AdvancedReport\obj\Debug\Lab14_AdvancedReport.exe
 C:\nguyenduyhung\Lab14_AdvancedReport\Lab14_AdvancedReport\obj\Debug\Lab14_AdvancedReport.pdb
+C:\nguyenduyhung\Lab14_AdvancedReport\Lab14_AdvancedReport\obj\Debug\Lab14_AdvancedReport.exe.config

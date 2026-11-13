@@ -52,20 +52,21 @@ namespace Lab14_AdvancedReport
                 data.Columns.Add("HoTen", typeof(string));
                 data.Columns.Add("MaKhoa", typeof(string));
                 data.Columns.Add("TenKhoa", typeof(string));
+                data.Columns.Add("DiemTB", typeof(double)); // Bổ sung cột Điểm trung bình
 
                 // Thêm dữ liệu mẫu phù hợp với mã khoa chọn
                 if (maKhoa == "KH01")
                 {
-                    data.Rows.Add("SV01", "Nguyễn Văn Hiếu", "KH01", tenKhoa);
-                    data.Rows.Add("SV02", "Trần Văn An", "KH01", tenKhoa);
+                    data.Rows.Add("SV01", "Nguyễn Duy Hưng", "KH01", tenKhoa, 8.5);
+                    data.Rows.Add("SV02", "Trần Văn An", "KH01", tenKhoa, 9.2);
                 }
                 else if (maKhoa == "KH02")
                 {
-                    data.Rows.Add("SV03", "Lê Thị Hồng", "KH02", tenKhoa);
+                    data.Rows.Add("SV03", "Lê Thị Hồng", "KH02", tenKhoa, 7.4);
                 }
                 else
                 {
-                    data.Rows.Add("SV04", "Phạm Hoàng Long", "KH03", tenKhoa);
+                    data.Rows.Add("SV04", "Phạm Hoàng Long", "KH03", tenKhoa, 6.8);
                 }
 
                 // Khởi tạo báo cáo rptStudent
